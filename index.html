@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franciele Teles dos Santos ID: 77262</title>
+    <!-- Font Awesome for button icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            background-color: #dbe8dc;
+        }
+
+        .colour-box {
+            background-color: #000;
+            color: #fff;
+            padding: 26px 24px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        #boxDisplay {
+            background-color: #05a000;
+            color: #fff;
+            padding: 12px 18px;
+            font-size: 1.1rem;
+            font-weight: normal;
+            min-width: 130px;
+            text-align: center;
+        }
+
+        #btn-colour {
+            background-color: #1400ff;
+            color: white;
+            border: none;
+            border-radius: 999px;
+            padding: 20px 36px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.25);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        #btn-colour:hover {
+            opacity: 0.95;
+            transform: scale(1.03);
+        }
+
+        #btn-colour i {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="bigSection">
+        <div class="colour-box">
+            <h2>Background Colour:</h2>
+            <span id="boxDisplay">#DBF4E4</span>
+        </div>
+
+        <button id="btn-colour">
+            <i class="fa-solid fa-paint-roller"></i>
+            Click me
+        </button>
+    </section>
+
+    <script>
+        const btnChangeColour = document.getElementById('btn-colour');
+        const boxDisplay = document.getElementById('boxDisplay');
+        const bigSection = document.getElementById('bigSection');
+
+        btnChangeColour.addEventListener('click', () => {
+            const arrColour = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+            let strHexColour = '#';
+
+            for (let i = 0; i < 6; i++) {
+                strHexColour += arrColour[getRandomNumber(arrColour.length)];
+            }
+
+            boxDisplay.innerText = strHexColour;
+            bigSection.style.backgroundColor = strHexColour;
+        });
+
+        function getRandomNumber(max) {
+            return Math.floor(Math.random() * max);
+        }
+    </script>
+
+</body>
+</html>
